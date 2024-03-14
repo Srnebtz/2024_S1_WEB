@@ -1,43 +1,54 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <style>
-    .tooltip {
-      position: relative;
-      display: inline-block;
-      border-bottom: 1px dotted black; 
-    
-    }
-    
-    .tooltip .tooltiptext {
-      visibility: hidden;
-      width: 120px;
-      background-color: black;
-      color: #fff;
-      text-align: center;
-      padding: 5px 0;
-      border-radius: 6px;
-      display:inline-block;
-      
-     
-      position: absolute;
-      z-index: 1;
-    }
-    .italic{
-        font-style: italic;
-    }
-    p.no-wrap {
-        display: inline;
-    }
-    .tooltip:hover .tooltiptext {
-      visibility: visible;
-    }
+a {
+  color: blue; 
+}
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+
+
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px; 
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .italic {
+  font-style: italic;
+}
+
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
 </style>
 </head>
-
-
 <body>
-    <p>This is a paragraph with <a href="http://nyan.cat">a link to http://nyan.cat</a>, followed by some other text.</p>
-    <p class="no-wrap">This paragraph has a <div class="tooltip">tooltip <span class="tooltiptext">Wow! A tooltip.</span></div> that says <span class="italic">"Wow! A tooltip."</span>.</p>
-    <p>This paragraph has a tooltip <span class="tooltip">that says<span class="tooltiptext">This tooltip "has quotes in the middle" of it.</span></span><span class="italic"> This tooltip "has quotes in the middle" of it</span>.</p>
+
+<p>This is a paragraph with a <a href="http://nyan.cat">link to http://nyan.cat</a>, followed by some other text.</p>
+
+<p>This paragraph has a <span class="tooltip">tooltip that says <span class="italic">"Wow! A tooltip."</span><span class="tooltiptext">Wow! A tooltip.</span></span>.</p>
+
+<p>This paragraph has a <span class="tooltip">tooltip that says <span class="italic">This tooltip "has quotes in the middle" of it.</span><span class="tooltiptext">This tooltip "has quotes in the middle" of it.</span></span>.</p>
+
 </body>
 </html>
